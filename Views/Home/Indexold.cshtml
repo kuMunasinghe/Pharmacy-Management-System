@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+     @using (Html.BeginForm("Auth", "Home", FormMethod.Post))
+    {
+        <label class="">Email</label>
+        <div class="form-group col-md-5">
+            <input type="email" placeholder="Enter the email here" name="email" class="form-control form-control-lg" />
+        </div>
+        <label>Password</label>
+        <div class="form-group col-md-5">
+            <input type="password" placeholder="Enter the password here" name="pwd" class="form-control form-control-lg"/>
+        </div>
+        <input type="submit" value="Sign In" class="btn btn-outline-primary btn-lg"/>
+    }
+</div>
+
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Sorry</strong> @TempData["Message"].
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+
+
+

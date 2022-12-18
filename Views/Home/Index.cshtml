@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_ViewLogincshtml.cshtml";
+}
+
+<!-- login form -->
+<section class="w3l-login">
+    <div class="overlay">
+        <div class="wrapper">
+            <div class="logo">
+                <br>
+                <p style="color:white;font-size: 35px;"><strong>P</strong>haramcy<strong> M</strong>anagement<strong> System</strong>💊</p>
+            </div>
+            <div class="form-section">
+                <p>PMS organizes and maintains the medication use process within pharmacies</p><br />
+                <h6>To continue ,Please Enter the credentials.</h6>
+                <form asp-action="Auth" asp-controller="Home" method="post" class="signin-form">
+                    <div class="form-input">
+                        <input type="email" name="email" placeholder="User Email" required="" autofocus>
+                    </div>
+                    <div class="form-input">
+                        <input type="password" name="pwd" placeholder="Password" required="">
+                    </div>
+                    <button type="submit" class="btn btn-success theme-button btn-lg mt-4">Sign in</button>
+                    @if (TempData["Message"] != null)
+                    {
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>Sorry</strong> @TempData["Message"].
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    }
+                    @Html.Label( "Don't have account ?")
+                    <center>
+                        @Html.ActionLink("Register", "AddNewView","UserManagement",null,new { @class="btn btn-outline-info mt-4" })
+                    </center>
+                   
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+</section>
+
+
