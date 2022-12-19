@@ -1,8 +1,73 @@
-﻿
+﻿@model PMS.Models.DashboardData
+
 @{
     ViewData["Title"] = "Home";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
+<center>
+<h1>Pharmacy Management System 💊</h1>
+<h3> Overview</h3>
+</center>
+<div>
+    
+    <hr />
+    <br>
+        <h5>PMS organizes and maintains the medication use process within pharmacies</h5>
+<center>
+     <br> <br> <br>
+    <br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+     <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
 
-<h1>Home</h1>
+  <div class="card-body">
+    <h5 class="card-title">Total Stock</h5>
+  
+    @Html.DisplayFor(model => model.StockCount)
+  </div>
+</div>
+    </div>
+    <div class="col">
+     <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+ 
+  <div class="card-body">
+    <h5 class="card-title">Total Sales</h5>
+     @Html.DisplayFor(model => model.SaleCount)
+   
+  </div>
+</div>
+    </div>
+  </div>
+  <center>
+  <div class="row">
+    <div class="col">
+      <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+ 
+  <div class="card-body">
+    <h5 class="card-title">Total Registered Retailers</h5>
+    @Html.DisplayFor(model => model.RetailCount)
+  </div>
+</div>
+    </div>
+    <div class="col">
+      <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
 
+  <div class="card-body">
+    <h5 class="card-title">Total Manufactuers</h5>
+   @Html.DisplayFor(model => model.Company)
+  </div>
+</div>
+    </div>
+    <div class="col">
+     <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">Total Medicine Available</h5>
+     @Html.DisplayFor(model => model.RegisteredMed)
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>

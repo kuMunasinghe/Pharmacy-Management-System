@@ -62,7 +62,13 @@ namespace PMS.Controllers
 
         public IActionResult Home()
         {
-            return View();
+            DashboardData dashdata = new();
+            dashdata.SaleCount = getSaleCount();
+            dashdata.StockCount = getStockCount();
+            dashdata.RetailCount = getRetailCount();
+            dashdata.Company = getCompanyCount();
+            dashdata.RegisteredMed = getMedCount();
+            return View(dashdata);
         }
         public IActionResult UserManager()
         {
@@ -101,6 +107,151 @@ namespace PMS.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public int getSaleCount()
+        {
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;user=root;password='';port=3306;database=pms;"))
+            {
+                conn.Open();
+                string query = @"SELECT COUNT(sales.sale_id) as salecount FROM sales ;";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                   
+                    //GET DATA
+                    DashboardData sale = new ();
+                    sale.SaleCount = Convert.ToInt32(reader["salecount"]);
+                  
+                    if (sale != null)
+                    {
+                        return sale.SaleCount;
+
+                    }
+
+                }
+                reader.Close();
+            }
+            TempData["Message"] = "User Email or Password is Incorrect !";
+            return 0;
+        }
+
+        public int getStockCount()
+        {
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;user=root;password='';port=3306;database=pms;"))
+            {
+                conn.Open();
+                string query = @"SELECT COUNT(stock.stock_id) as stockcount FROM stock ;";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    //GET DATA
+                    DashboardData data = new();
+                    data.SaleCount = Convert.ToInt32(reader["stockcount"]);
+
+                    if (data != null)
+                    {
+                        return data.SaleCount;
+
+                    }
+
+                }
+                reader.Close();
+            }
+            TempData["Message"] = "User Email or Password is Incorrect !";
+            return 0;
+        }
+
+        public int getRetailCount()
+        {
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;user=root;password='';port=3306;database=pms;"))
+            {
+                conn.Open();
+                string query = @"SELECT COUNT(retail.retail_id) as retailcount FROM retail ;";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    //GET DATA
+                    DashboardData data = new();
+                    data.SaleCount = Convert.ToInt32(reader["retailcount"]);
+
+                    if (data != null)
+                    {
+                        return data.SaleCount;
+
+                    }
+
+                }
+                reader.Close();
+            }
+            TempData["Message"] = "User Email or Password is Incorrect !";
+            return 0;
+        }
+
+        public int getCompanyCount()
+        {
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;user=root;password='';port=3306;database=pms;"))
+            {
+                conn.Open();
+                string query = @"SELECT COUNT(company.id) as companycount FROM company;";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    //GET DATA
+                    DashboardData data = new();
+                    data.SaleCount = Convert.ToInt32(reader["companycount"]);
+
+                    if (data != null)
+                    {
+                        return data.SaleCount;
+
+                    }
+
+                }
+                reader.Close();
+            }
+            TempData["Message"] = "User Email or Password is Incorrect !";
+            return 0;
+        }
+
+        public int getMedCount()
+        {
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;user=root;password='';port=3306;database=pms;"))
+            {
+                conn.Open();
+                string query = @"SELECT COUNT(medicine.medicine_id) as medcount FROM medicine ;";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    //GET DATA
+                    DashboardData data = new();
+                    data.SaleCount = Convert.ToInt32(reader["medcount"]);
+
+                    if (data != null)
+                    {
+                        return data.SaleCount;
+
+                    }
+
+                }
+                reader.Close();
+            }
+            TempData["Message"] = "User Email or Password is Incorrect !";
+            return 0;
         }
     }
 }
