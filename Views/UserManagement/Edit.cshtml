@@ -1,0 +1,71 @@
+﻿@model PMS.Models.Users
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<h1>Edit</h1>
+
+<div>
+    <h4>Users</h4>
+    <hr />
+    <form asp-action="Save" method="post">
+         <div class="form-group">
+                                <label class="control-label" asp-for=Id>Employee Number</label> ➡ 
+                                    <mark>@Html.DisplayFor(model => model.Id)</mark></input>
+                                    <input asp-for="Id" type="hidden" />
+                                    <!--<input asp-for="EmpNo" type="hidden" class="form-control" name="EmpNo" />-->
+                            </div>
+        <dl class="row">
+            <dt class="col-sm-2">
+                ID
+            </dt>
+            <dd class="col-sm-10">
+                  
+            </dd>
+            <dt class="col-sm-2">
+                First Name ➡️
+            </dt>
+            <dd class="col-sm-10">
+                <input type="text" name="First_Name" />
+            </dd>
+            <dt class="col-sm-2">
+                Last Name ➡️
+            </dt>
+            <dd class="col-sm-10">
+                <input type="text" name="Last_Name" />
+            </dd>
+            <dt class="col-sm-2">
+                📧 ➡️
+            </dt>
+            <dd class="col-sm-10">
+                <input type="email" name="Email" />
+            </dd>
+            <dt class="col-sm-2">
+                🔐 ➡️
+            </dt>
+            <dd class="col-sm-10">
+                <input type="password" name="Password" />
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Mobile)
+            </dt>
+            <dd class="col-sm-10">
+                <input type="number" name="mobile" />
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+            <dd class="col-sm-10">
+                <input type="text" name="Address" />
+            </dd>
+            <input type="submit" value="Save Changes"/>
+        </dl>
+    </form>
+   
+</div>
+<div>
+    @Html.ActionLink("Save", "Save", new {  id = Model.Id  }) |
+    <a asp-action="Index">Back to List</a>
+</div>

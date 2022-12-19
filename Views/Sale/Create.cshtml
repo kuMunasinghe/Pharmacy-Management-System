@@ -1,0 +1,68 @@
+﻿@model PMS.Models.Sales
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+
+
+<h4>+📄 Add Sale Record</h4><br/>
+<hr />
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong></strong> @TempData["Message"].
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+<form asp-action="CreateSubmit" asp-controller="Sale" method="post">
+    <div class="row">
+        <div class="mb-3 col">
+            <label for="exampleFormControlInput1" class="form-label">Sales Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter the Invoice name" name="sale_name">
+        </div>
+       
+        
+        <div class="mb-3 col">
+            <label for="exampleFormControlInput1" class="form-label">Type</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="sale_type">
+        </div>
+        <div class="mb-3 col">
+            <label for="exampleFormControlInput1" class="form-label">Value (LKR)</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter value(profit) of the sale" name="sale_value">
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="input-group flex-nowrap col">
+            <span class="input-group-text" id="addon-wrapping">Invoice Description</span>
+            <input type="text" class="form-control" placeholder="Enter the Invoice Description"  aria-describedby="addon-wrapping" name="sale_description">
+        </div>
+    </div>
+    <br />
+   
+    <br />
+    <div class="row">
+            <div class="col">
+            <label for="exampleFormControlInput1" class="form-label">Date</label>
+            <input type="date" 
+              
+                   min="2022-12-18"
+                   max="2050-08-31"
+                   step="1"
+                   name="sale_date" class="form-group"/>
+        </div>
+        </div>
+    <input type="submit" class="btn btn-success btn-lg" value="Add Sale Record"/>
+</form>
+
+
+<br />
+<div>
+    <a asp-action="Index" class="btn btn-outline-info">Back to List</a>
+</div>
+

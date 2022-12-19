@@ -842,3 +842,13 @@ C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\refint
 C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\PMS.pdb
 C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\PMS.genruntimeconfig.cache
 C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\ref\PMS.dll
+C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\Views\UserManagement\Create.cshtml.g.cs
+C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\Views\UserManagement\Edit.cshtml.g.cs
+C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\Views\UserManagement\Editt.cshtml.g.cs
+C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\Views\Sale\Index.cshtml.g.cs
+C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\Views\Sale\Create.cshtml.g.cs
+C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\Views\Company\Index.cshtml.g.cs
+C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\Views\Medicine\Index.cshtml.g.cs
+C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\Views\Retail\Index.cshtml.g.cs
+C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\Views\Stock\Index.cshtml.g.cs

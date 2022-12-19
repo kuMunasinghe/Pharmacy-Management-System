@@ -1,0 +1,58 @@
+﻿@model PMS.Models.Users
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+
+<h4>👨‍💼👩‍💼 Add User</h4><br/>
+<hr />
+
+<form asp-action="CreateSubmit" asp-controller="UserManagement" method="post">
+    <div class="row">
+        <div class="mb-3 col">
+            <label for="exampleFormControlInput1" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter the First Name" name="fn">
+        </div>
+        <div class="mb-3 col">
+            <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter the Last Name" name="ln">
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="input-group flex-nowrap col">
+            <span class="input-group-text" id="addon-wrapping">📧</span>
+            <input type="email" class="form-control" placeholder="Email Address" aria-label="Email Address" aria-describedby="addon-wrapping" name="email">
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-group flex-nowrap col-4">
+            <span class="input-group-text" id="addon-wrapping">🔐</span>
+            <input type="password" class="form-control" placeholder="Enter a Password"  aria-describedby="addon-wrapping" name="pwd">
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-group col-3">
+            <span class="input-group-text" id="addon-wrapping">📱</span>
+            <input type="number" class="form-control" placeholder="Enter the Mobile Number" aria-describedby="addon-wrapping" maxlength="10" name="mobile">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col">
+            <label class="form-label">Address</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter the Address" name="add">
+        </div>
+    </div>
+    <br />
+    <input type="submit" class="btn btn-success btn-lg" value="Create User"/>
+</form>
+
+
+<br />
+<div>
+    <a asp-action="Index" class="btn btn-outline-info">Back to List</a>
+</div>
+
