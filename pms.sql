@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2022 at 03:02 PM
+-- Generation Time: Dec 19, 2022 at 05:21 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -39,8 +39,7 @@ CREATE TABLE `company` (
 --
 
 INSERT INTO `company` (`id`, `company_name`, `company_tel`, `company_address`) VALUES
-(1, 'SPC', 112320350, 'SPC, Mehewara piyasa, 16th floor, No41, Kirulupana Road, Colombo 05, Sri Lanka.'),
-(8, 'wedfwdwdw', 0, 'fwfewfwww');
+(1, 'SPC', 112320350, 'SPC, Mehewara piyasa, 16th floor, No41, Kirulupana Road, Colombo 05, Sri Lanka.');
 
 -- --------------------------------------------------------
 
@@ -62,7 +61,7 @@ CREATE TABLE `medicine` (
 --
 
 INSERT INTO `medicine` (`medicine_id`, `medicine_name`, `manufacture_id`, `unit_price`, `medicine_type`, `description`) VALUES
-(2, 'Paracetomol', 1, 3, 'pain killer', 'low pain killer');
+(2, 'Paracetomol', 1, 1.5, 'pain killer', 'low pain killer');
 
 -- --------------------------------------------------------
 
@@ -93,7 +92,7 @@ INSERT INTO `retail` (`retail_id`, `retail_name`, `retail_type`, `retail_tel`, `
 
 CREATE TABLE `sales` (
   `sale_id` int(11) NOT NULL,
-  `sale_date` date NOT NULL DEFAULT current_timestamp(),
+  `sale_date` date NOT NULL,
   `sale_name` varchar(255) NOT NULL,
   `sale_type` varchar(255) NOT NULL,
   `sale_value` int(11) NOT NULL,
@@ -220,7 +219,7 @@ ALTER TABLE `retail`
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `sale_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `sale_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `stock`
