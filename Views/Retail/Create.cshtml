@@ -1,0 +1,50 @@
+﻿@model PMS.Models.Retail
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<h4>+🏥 Add Retailer Pharmacy</h4><br/>
+<hr />
+
+
+<form asp-action="CreateSubmit" asp-controller="Retail" method="post">
+    <div class="row">
+        <div class="mb-3 col">
+            <label for="exampleFormControlInput1" class="form-label">Retailer Pharmacy Name</label>
+            <input type="text" class="form-control" placeholder="Enter the Retailer / Pharmacy" name="Name">
+        </div>
+       
+    </div>
+     <div class="row">
+        <div class="mb-3 col">
+            <label for="exampleFormControlInput1" class="form-label">Type</label>
+            <input type="text" class="form-control" placeholder="Enter the company name" name="Type">
+        </div>
+       
+    </div>
+     <div class="input-group flex-nowrap col-3">
+            <span class="input-group-text" id="addon-wrapping">📞</span>
+            <input type="number" class="form-control" placeholder="Telephone"  name="Tel">
+        </div>
+<br>
+    <div class="row">
+        <div class="input-group flex-nowrap col">
+            <span class="input-group-text" id="addon-wrapping">Address</span>
+            <input type="text" class="form-control" placeholder="Enter the  Address and Sperate with ,"   name="Address">
+        </div>
+    </div>
+    <br />
+   
+    <br />
+    
+    <input type="submit" class="btn btn-success btn-lg" value="Add Data"/>
+</form>
+
+
+<br />
+<div>
+    <a asp-action="Index" class="btn btn-outline-info">Back to List</a>
+</div>
+

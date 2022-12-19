@@ -1,0 +1,57 @@
+﻿@model PMS.Models.Retail
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<div>
+    <h4>+🏥Edit Reailer Tel. Number and Address</h4>
+    <hr />
+    <form asp-action="Save" method="post">
+         <div class="form-group">
+                                <label class="control-label" asp-for=Id>Reiler ID</label> ➡ 
+                                    <mark>@Html.DisplayFor(model => model.Id)</mark></input>
+                                    <label>@TempData["ID"]
+                                    <input asp-for="Id" type="hidden" />
+                                    <!--<input asp-for="EmpNo" type="hidden" class="form-control" name="EmpNo" />-->
+                            </div>
+        <div class="row">
+            
+         <div class="input-group flex-nowrap col-3">
+            <span class="input-group-text" id="addon-wrapping">📞</span>
+            <input type="text" class="form-control" placeholder="Enter the the Telephone number"  aria-describedby="addon-wrapping" name="Tel">
+            <br>
+            
+        </div>
+        <br/>
+        
+        </div>
+        <br/>
+        <div class="row">
+             <div class="input-group flex-nowrap col-7">
+            <span class="input-group-text" id="addon-wrapping">Address</span>
+            <input type="text" class="form-control" placeholder="Enter the New Address"  aria-describedby="addon-wrapping" name="Address">
+            <br>
+            
+        </div>
+        </div>
+          <br/>  <br/>
+        <input type="submit" class="btn btn-warning" value="Save"/>
+    </form>
+   
+</div>
+<br/>
+</br>
+<div>
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+    <br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+
+</div>
