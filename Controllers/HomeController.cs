@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Google.Protobuf.WellKnownTypes;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using PMS.Models;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Diagnostics;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Threading.Tasks;
-
+using System.Web;
 namespace PMS.Controllers
 {
     public class HomeController : Controller
@@ -22,6 +24,7 @@ namespace PMS.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
         public IActionResult Auth(string email,string pwd)
@@ -49,6 +52,7 @@ namespace PMS.Controllers
                     user.Address = reader["address"].ToString();
                     if (user.Email == email && user.Password == pwd)
                     {
+                        string session_value = user.Email;
                         return RedirectToAction("Home");             
                             
                     }
