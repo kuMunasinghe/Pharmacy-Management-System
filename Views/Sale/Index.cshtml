@@ -6,20 +6,23 @@
 }
 
 
-<h3> Sales 💹</h3>
-<p> This view includes the all the sale item that have purchased.</p>
+<h4>💹 Sale</h4>
+<br />
+<p>This page contains the sale data which is related to retailers  in PMS.</p>
+<hr />
+<br />
 <p>
-    @if (TempData["Message"] != null)
-    {
-        <div class="alert alert-info alert-dismissible fade show" role="alert">
-            <strong></strong> @TempData["Message"].
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    }
-    @Html.ActionLink("Add New Sale Record 📥", "Create","Sale", null,new{@class="btn btn-primary"})
-
+    @Html.ActionLink("+📄 Add Record", "Create","Sale", null,new{@class="btn btn-info"})
+</p>
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>Alert ❗</strong> @TempData["Message"].
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
     <div style="overflow:auto;">
         <table class="table">
             <thead>

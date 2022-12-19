@@ -1,0 +1,52 @@
+﻿@model PMS.Models.Medicine
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<h4>+💊 Add Data</h4><br/>
+<hr />
+
+
+<form asp-action="CreateSubmit" asp-controller="Medicine" method="post">
+    <div class="row">
+        <div class="mb-3 col">
+            <label for="exampleFormControlInput1" class="form-label">Medicine Name</label>
+            <input type="text" class="form-control" placeholder="Enter the medicine name" name="Name">
+        </div>
+        <div class="mb-2 col">
+            <label for="exampleFormControlInput1" class="form-label">Manufacture ID</label>
+            <input type="number" class="form-control"  name="Manufacture_ID">
+        </div>
+   
+        <div class="mb-4 col">
+            <label for="exampleFormControlInput1" class="form-label">Type</label>
+            <input type="text" class="form-control"  name="Type">
+        </div>
+        
+
+    </div>
+    <div class="row">
+        <div class="mb-1 col-3">
+            <label for="exampleFormControlInput1" class="form-label">Unit Price (LKR)</label>
+            <input type="number" class="form-control"  placeholder="unit price of medicine" name="Unit">
+        </div>
+        <div class="input-group flex-nowrap col">
+            <span class="input-group-text" id="addon-wrapping">Description</span>
+            <input type="text" class="form-control" placeholder="Enter the  Description"   name="Description">
+        </div>
+    </div>
+    <br />
+   
+    <br />
+    
+    <input type="submit" class="btn btn-success btn-lg" value="Add Data"/>
+</form>
+
+
+<br />
+<div>
+    <a asp-action="Index" class="btn btn-outline-info">Back to List</a>
+</div>
+

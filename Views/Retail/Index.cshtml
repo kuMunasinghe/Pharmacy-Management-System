@@ -5,28 +5,40 @@
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 
-<h1>Index</h1>
-
+<h4>🏥 Retail Pharamacy</h4>
+<br />
+<p>This page contains the details of retailers in PMS.</p>
+<hr />
+<br />
 <p>
-    <a asp-action="Create">Create New</a>
+    @Html.ActionLink("+🏥 Add Retailer", "Create","Retail", null,new{@class="btn btn-info"})
 </p>
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>Alert ❗</strong> @TempData["Message"].
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
+                ID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                Retailer Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Type)
+                Type
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tel)
+                Tel:
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address)
+              Address
             </th>
             <th></th>
         </tr>
@@ -50,9 +62,8 @@
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+               @Html.ActionLink("Edit","Edit","Retail", new { Id = item.Id},new { @class="btn btn-warning btn-sm"}) |
+                @Html.ActionLink("Delete","Delete","Retail", new { Id = item.Id},new { @class="btn btn-danger btn-sm" })
             </td>
         </tr>
 }

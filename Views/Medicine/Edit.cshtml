@@ -1,0 +1,46 @@
+﻿@model PMS.Models.Medicine
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+
+
+<div>
+    <h4>Users</h4>
+    <hr />
+    <form asp-action="Save" method="post">
+         <div class="form-group">
+                                <label class="control-label" asp-for=Id>Medicine Record ID</label> ➡ 
+                                    <mark>@Html.DisplayFor(model => model.Id)</mark></input>
+                                    <label>@TempData["ID"]
+                                    <input asp-for="Id" type="hidden" />
+                                    <!--<input asp-for="EmpNo" type="hidden" class="form-control" name="EmpNo" />-->
+                            </div>
+        <div class="row">
+            
+         <div class="input-group flex-nowrap col-7">
+            <span class="input-group-text" id="addon-wrapping">Unit Price / LKR.</span>
+            <input type="text" class="form-control" placeholder="Enter the Unit Price for Medicine"  aria-describedby="addon-wrapping" name="Unit">
+            <br>
+            
+        </div>
+        <input type="submit" class="btn btn-warning" value="Save"/>
+    </form>
+   
+</div>
+<br/>
+</br>
+<div>
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+    <br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+
+</div>

@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using PMS.Models;
 using System.Collections.Generic;
 using System;
+using System.Data;
 
 namespace PMS.Controllers
 {
@@ -33,6 +34,44 @@ namespace PMS.Controllers
                 reader.Close();
             }
             return View(retailer);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            string query = @"
+                        delete from retail 
+                        where id=@id;
+                        
+            ";
+
+            DataTable table = new DataTable();
+            MySqlDataReader myReader;
+            using (MySqlConnection mycon = new MySqlConnection("server=localhost;user=root;password='';port=3306;database=pms;"))
+            {
+                mycon.Open();
+                using (MySqlCommand myCommand = new MySqlCommand(query, mycon))
+                {
+                    myCommand.Parameters.AddWithValue("@id", id);
+
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader);
+                    int status = myReader.RecordsAffected;
+                    myReader.Close();
+
+                    mycon.Close();
+                    if (status == 1)
+                    {
+                        TempData["Message"] = "User Deleted !";
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        TempData["Message"] = "User Delete Failed !";
+                        return RedirectToAction("Index");
+                    }
+
+                }
+            }
         }
     }
 }
