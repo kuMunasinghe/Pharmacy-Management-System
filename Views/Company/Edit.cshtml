@@ -1,0 +1,50 @@
+﻿@model PMS.Models.Company
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+
+<div>
+    <h4>Company</h4>
+    <hr />
+    <form asp-action="Save" method="post">
+         <div class="form-group">
+                                <label class="control-label" asp-for=Id>Company ID</label> ➡ 
+                                    <mark>@Html.DisplayFor(model => model.Id)</mark></input>
+                                    <label>@TempData["ID"]
+                                    <input asp-for="Id" type="hidden" />
+                                    <!--<input asp-for="EmpNo" type="hidden" class="form-control" name="EmpNo" />-->
+                            </div>
+        <div class="row">
+            
+         <div class="input-group flex-nowrap col-3">
+            <span class="input-group-text" id="addon-wrapping">📞</span>
+            <input type="number" class="form-control" placeholder="Telephone"  name="Contact">
+        </div>
+        </div>
+        <div class="row">
+            
+        <div class="input-group flex-nowrap col">
+            <span class="input-group-text" id="addon-wrapping">Address</span>
+            <input type="text" class="form-control" placeholder="Enter the  Address and Sperate with ,"   name="Address">
+        </div>
+        </div>
+        <input type="submit" class="btn btn-warning" value="Save"/>
+    </form>
+   
+</div>
+<br/>
+</br>
+<div>
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+    <br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+
