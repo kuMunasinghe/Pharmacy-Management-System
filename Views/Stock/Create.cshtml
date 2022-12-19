@@ -1,0 +1,47 @@
+﻿@model PMS.Models.Stock
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<h4>+📦 Add Stock Record</h4><br/>
+<hr />
+
+
+<form asp-action="CreateSubmit" asp-controller="Stock" method="post">
+    <div class="row">
+        <div class="mb-3 col">
+            <label for="exampleFormControlInput1" class="form-label">Medicine ID</label>
+            <input type="text" class="form-control" placeholder="Enter the Medicine ID of the Medicine from the Medicine Records" name="MedicineID">
+        </div>
+       
+    </div>
+    <center>
+     <div class="row">
+        <div class="mb-3 col-3">
+            <label for="exampleFormControlInput1" class="form-label">Quantity</label>
+            <input type="text" class="form-control" placeholder="Enter the current quantity" name="Quantity">
+        </div>
+          <div class="mb-3 col-4">
+            <label for="exampleFormControlInput1" class="form-label">Maximum Capacity</label>
+            <input type="text" class="form-control" placeholder="Enter the Maximum size that Store can Handle" name="Capacity">
+        </div>
+       
+    </div>
+  </center>
+<br>
+  
+    <br />
+   
+    <br />
+    
+    <input type="submit" class="btn btn-success btn-lg" value="Add Data"/>
+</form>
+
+
+<br />
+<div>
+    <a asp-action="Index" class="btn btn-outline-info">Back to List</a>
+</div>
+

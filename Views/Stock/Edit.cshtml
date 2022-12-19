@@ -1,0 +1,44 @@
+﻿@model PMS.Models.Stock
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<div>
+    <h4>^📦 Stock Quantity Update</h4>
+    <hr />
+    <form asp-action="Save" method="post">
+         <div class="form-group">
+                                <label class="control-label" asp-for=Id>Stock Record ID</label> ➡ 
+                                    <mark>@Html.DisplayFor(model => model.Id)</mark></input>
+                                    <label>@TempData["ID"]
+                                    <input asp-for="Id" type="hidden" />
+                                    <!--<input asp-for="EmpNo" type="hidden" class="form-control" name="EmpNo" />-->
+                            </div>
+        <div class="row">
+            
+         <div class="input-group flex-nowrap col-7">
+            <span class="input-group-text" id="addon-wrapping">Updated  Quantity</span>
+            <input type="text" class="form-control" placeholder="Enter the Changes"  aria-describedby="addon-wrapping" name="Quantity">
+            <br>
+            
+        </div>
+        <input type="submit" class="btn btn-warning" value="Save"/>
+    </form>
+   
+</div>
+<br/>
+</br>
+<div>
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+    <br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+</br><br/>
+
+</div>

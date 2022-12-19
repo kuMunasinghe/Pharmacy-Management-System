@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+
 namespace PMS.Models
 {
     public class Stock
@@ -12,22 +14,22 @@ namespace PMS.Models
         {
             get
             {
-                int ratio= Capacity/Quantity ;
-                if (ratio > 0.5)
-                {
-                    return "OK ✅";
-                } 
-                else if (ratio <0.3)
-                {
-                    return "LOW❗";
-                }
-                else if(ratio<0.5 && ratio > 0.3)
+                int frac = Capacity / 4;
+
+                
+                if (2*frac >= Quantity)
                 {
                     return "CHECK ⚠️";
+                   
                 }
+                else if (frac <Quantity)
+                {
+                    return "OK ✅";
+                }
+               
                 else
                 {
-                    return null;
+                    return "UNKNOWN !";
                 }
             }
         }

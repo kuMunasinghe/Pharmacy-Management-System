@@ -858,3 +858,5 @@ C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\
 C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\Views\Company\Edit.cshtml.g.cs
 C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\Views\Retail\Create.cshtml.g.cs
 C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\Views\Retail\Edit.cshtml.g.cs
+C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\Views\Stock\Create.cshtml.g.cs
+C:\Users\kasun\OneDrive\Desktop\PharmacyManagementSystem\obj\Debug\net5.0\Razor\Views\Stock\Edit.cshtml.g.cs
