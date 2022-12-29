@@ -72,6 +72,7 @@ namespace PMS.Controllers
             dashdata.RetailCount = getRetailCount();
             dashdata.Company = getCompanyCount();
             dashdata.RegisteredMed = getMedCount();
+            dashdata.UserCount = getUserCount();
             return View(dashdata);
         }
         public IActionResult UserManager()
@@ -255,6 +256,35 @@ namespace PMS.Controllers
                 reader.Close();
             }
             TempData["Message"] = "User Email or Password is Incorrect !";
+            return 0;
+        }
+
+        public int getUserCount()
+        {
+            using (MySqlConnection conn = new MySqlConnection("server=localhost;user=root;password='';port=3306;database=pms;"))
+            {
+                conn.Open();
+                string query = @"SELECT COUNT(id) AS usercount FROM users;";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    //GET DATA
+                    DashboardData data = new();
+                    data.UserCount = Convert.ToInt32(reader["usercount"]);
+
+                    if (data != null)
+                    {
+                        return data.UserCount;
+
+                    }
+
+                }
+                reader.Close();
+            }
+      
             return 0;
         }
     }

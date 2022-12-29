@@ -7,5 +7,6 @@
         public int RetailCount { get; set; }
         public int Company { get; set; }    
         public int RegisteredMed { get; set; }
+        public int UserCount { get; set; }
     }
 }

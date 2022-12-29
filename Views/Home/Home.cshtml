@@ -4,73 +4,109 @@
     ViewData["Title"] = "Home";
     Layout = "~/Views/Shared/_LayoutDash.cshtml";
 }
-<div style="background: linear-gradient(0deg, rgba(34,195,120,1) 0%, rgba(77,253,45,0) 61%);">
+
 <center>
-<h1 class="text-black">Pharmacy Management System 💊</h1>
-        <h3 class="text-black"> Overview</h3>
+    <p style="color:Black;font-size: 35px;"><strong>P</strong>haramacy<strong> M</strong>anagement<strong> S</strong>ystem 💊</p>
 </center>
-<div>
-    
-    <hr />
-    <br>
-        <h5 class="text-black">&nbsp;💡 PMS organizes and maintains the medication use process within pharmacies</h5>
-<center>
-     <br> <br> <br>
-    <br>
+<br/>
+
+
 <div class="container">
-  <div class="row">
-    <div class="col">
-     <div class="card text-white bg-primary mb-4" style="max-width: 18rem;">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm ">
+                    <div class="card-header py-3 bg-dark text-white">
+                        <h4 class="my-0 fw-normal">📦 Stocks</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Total stock items</li>
+                        </ul>
+                        <h1 class="card-title pricing-card-title">@Model.StockCount<small class="text-muted fw-light"></small></h1>
+                        @Html.ActionLink("Enter", "Index","Stock",null,new { @class="w-100 btn btn-lg btn-outline-dark" })
+                    </div>
+                </div>
+            </div>
 
-  <div class="card-body">
-    <h5 class="card-title">Total Stock</h5>
-  
-    @Html.DisplayFor(model => model.StockCount)
-  </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm ">
+                    <div class="card-header py-3 bg-success text-white">
+                        <h4 class="my-0 fw-normal">💵 Sales</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Total sale records</li>
+                        </ul>
+                        <h1 class="card-title pricing-card-title">@Model.SaleCount<small class="text-muted fw-light"></small></h1>
+                        @Html.ActionLink("Enter", "Index","Sale",null,new { @class="w-100 btn btn-lg btn-outline-success" })
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm ">
+                    <div class="card-header py-3 bg-warning text-white">
+                        <h4 class="my-0 fw-normal">🏥 Retailers</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Total registered retailers</li>
+                        </ul>
+                        <h1 class="card-title pricing-card-title">@Model.RetailCount<small class="text-muted fw-light"></small></h1>
+                        @Html.ActionLink("Enter", "Index","Retail",null,new { @class="w-100 btn btn-lg btn-outline-warning" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Next Row-->
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm ">
+                    <div class="card-header py-3 bg-primary text-white">
+                        <h4 class="my-0 fw-normal">💊 Medicines</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Total medicines available</li>
+                        </ul>
+                        <h1 class="card-title pricing-card-title">@Model.RegisteredMed<small class="text-muted fw-light"></small></h1>
+                        @Html.ActionLink("Enter", "Index","Medicine",null,new { @class="w-100 btn btn-lg btn-outline-primary" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm ">
+                    <div class="card-header py-3 bg-light text-black">
+                        <h4 class="my-0 fw-normal">🏭 Manufactures</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Total registered medicine manufactures</li>
+                        </ul>
+                        <h1 class="card-title pricing-card-title">@Model.Company<small class="text-muted fw-light"></small></h1>
+                        @Html.ActionLink("Enter", "Index","Company",null,new { @class="w-100 btn btn-lg btn-outline-dark text-black" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm ">
+                    <div class="card-header py-3 bg-info text-white">
+                        <h4 class="my-0 fw-normal">🧑‍💻 Users</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Total registered users</li>
+                        </ul>
+                        <h1 class="card-title pricing-card-title">@Model.UserCount<small class="text-muted fw-light"></small></h1>
+                        @Html.ActionLink("Enter", "Index","UserManagement",null,new { @class="w-100 btn btn-lg btn-outline-info" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 </div>
-    </div>
-    <div class="col">
-     <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
  
-  <div class="card-body">
-    <h5 class="card-title">Total Sales</h5>
-     @Html.DisplayFor(model => model.SaleCount)
-   
-  </div>
-</div>
-    </div>
-  </div>
-  <center>
-  <div class="row">
-    <div class="col">
-      <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
- 
-  <div class="card-body">
-    <h5 class="card-title">Total Registered Retailers</h5>
-    @Html.DisplayFor(model => model.RetailCount)
-  </div>
-</div>
-    </div>
-    <div class="col">
-      <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-
-  <div class="card-body">
-    <h5 class="card-title">Total Manufactuers</h5>
-   @Html.DisplayFor(model => model.Company)
-  </div>
-</div>
-    </div>
-    <div class="col">
-     <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-
-  <div class="card-body">
-    <h5 class="card-title">Total Medicine Available</h5>
-     @Html.DisplayFor(model => model.RegisteredMed)
-  </div>
-</div>
-    </div>
-  </div>
-</div>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
-    </div>
