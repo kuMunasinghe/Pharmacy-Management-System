@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {
+    "net8.0": {
       "Google.Protobuf/3.19.4": {
         "type": "package",
         "compile": {
@@ -873,16 +873,16 @@
           "System.Text.Encoding.CodePages": "4.4.0"
         },
         "compile": {
-          "lib/net5.0/MySql.Data.dll": {
+          "lib/net7.0/MySql.Data.dll": {
             "related": ".xml"
           },
-          "lib/net5.0/ZstdNet.dll": {}
+          "lib/net7.0/ZstdNet.dll": {}
         },
         "runtime": {
-          "lib/net5.0/MySql.Data.dll": {
+          "lib/net7.0/MySql.Data.dll": {
             "related": ".xml"
           },
-          "lib/net5.0/ZstdNet.dll": {}
+          "lib/net7.0/ZstdNet.dll": {}
         }
       },
       "MySql.EntityFrameworkCore/5.0.10": {
@@ -7707,7 +7707,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net5.0": [
+    "net8.0": [
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 5.0.17",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
       "MySql.Data >= 8.0.31",
@@ -7715,31 +7715,29 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kasun\\.nuget\\packages\\": {}
+    "/home/kasun-udakara/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kasun\\OneDrive\\Desktop\\PharmacyManagementSystem\\PMS.csproj",
+      "projectUniqueName": "/home/kasun-udakara/Desktop/Projects/PharmacyManagementSystem/PMS.csproj",
       "projectName": "PMS",
-      "projectPath": "C:\\Users\\kasun\\OneDrive\\Desktop\\PharmacyManagementSystem\\PMS.csproj",
-      "packagesPath": "C:\\Users\\kasun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kasun\\OneDrive\\Desktop\\PharmacyManagementSystem\\obj\\",
+      "projectPath": "/home/kasun-udakara/Desktop/Projects/PharmacyManagementSystem/PMS.csproj",
+      "packagesPath": "/home/kasun-udakara/.nuget/packages/",
+      "outputPath": "/home/kasun-udakara/Desktop/Projects/PharmacyManagementSystem/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kasun\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/kasun-udakara/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net5.0"
+        "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {}
         }
       },
@@ -7750,8 +7748,8 @@
       }
     },
     "frameworks": {
-      "net5.0": {
-        "targetAlias": "net5.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
             "target": "Package",
@@ -7789,7 +7787,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.104/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
